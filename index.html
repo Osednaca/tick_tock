@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script data-require="jquery@*" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link data-require="bootstrap@3.2.0" data-semver="3.2.0" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" />
+    <script data-require="bootstrap@3.2.0" data-semver="3.2.0" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script data-require="angular.js@1.3.0" data-semver="1.3.0" src="//code.angularjs.org/1.3.0/angular.js"></script>
+    <script data-require="ng-route@1.2.0" data-semver="1.2.0" src="http://code.angularjs.org/1.2.0-rc.3/angular-route.js"></script>
+ 
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+    <script src="controladores.js"></script>
+  </head>
+ 
+  <body data-ng-app="tickTockApp">
+    <div class="container">
+      <ul class="nav nav-tabs">
+         <li role="presentation"><a href="#/inicio">Inicio</a></li>
+         <li role="presentation"><a href="#/alarma">Alarma</a></li>
+      </ul>
+ 
+      <div data-ng-view=""></div>
+    </div>
+ 
+    <hr>
+ 
+    <!--<div class="footer text-center">Copyright mi aplicación</div>-->
+  </body>
+</html>
