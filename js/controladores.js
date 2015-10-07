@@ -5,7 +5,7 @@ angular.module('tickTockApp')
   }
   var Check = function(){
     var d = new Date();
-    if(d.getHours()+":"+d.getMinutes() == document.getElementsByName("alarm_hidden")[0].value)
+    if(d.getHours()+":"+(d.getMinutes()<10?'0':'') + d.getMinutes() == document.getElementsByName("alarm_hidden")[0].value)
     {
       var audio = new Audio('media/alert.mp3');
       audio.play();
