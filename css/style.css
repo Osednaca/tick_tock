@@ -1,0 +1,25 @@
+body {
+  font: Helvetica, sans-serif;
+  color: #333; }
+
+#clock {
+  float: none;
+  margin: 0 auto;
+  text-align: center; }
+
+#div_hours {
+  font-size: 60px;
+  width: 200px;
+  color: blue; }
+
+#div_minute {
+  font-size: 60px;
+  width: 200px;
+  color: green; }
+
+#div_seconds {
+  font-size: 60px;
+  width: 200px;
+  color: red; }
+
+/*# sourceMappingURL=style.css.map */
