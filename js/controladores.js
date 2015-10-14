@@ -1,25 +1,30 @@
 angular.module('tickTockApp')
   .controller('InicioCtrl', function ($scope, $interval,$timeout) {
+  $scope.alarm_set_message = true;
+  $scope.alarm_message = true;
   var tick = function() {
     $scope.clock = Date.now();
   }
   var Check = function(){
     var d = new Date();
-    if(d.getHours()+":"+(d.getMinutes()<10?'0':'') + d.getMinutes() == document.getElementsByName("alarm_hidden")[0].value)
+    if(d.getHours()+":"+(d.getMinutes()<10?'0':'') + d.getMinutes() == $scope.alarma.alarm_hidden)
     {
       var audio = new Audio('media/alert.mp3');
       audio.play();
-      alert("It's time!");
+      $scope.alarm_message = !$scope.alarm_message;
+      $scope.alarm_set_message = !$scope.alarm_set_message;
       $interval.cancel(check);
       $timeout(function(){
                 audio.pause();
+                $scope.alarm_message = !$scope.alarm_message;
               }, 5000);
     }
   }
   $scope.setAlarm = function(){
-    document.getElementsByName("alarm_hidden")[0].value = document.getElementsByName("alarm")[0].value;
-    document.getElementsByName("alarm")[0].value = "";
-    alert("Alarm set up to "+document.getElementsByName("alarm_hidden")[0].value)
+    $scope.alarma.alarm_hidden = $scope.alarma.alarm;
+    $scope.alarma.alarm = "";
+    $scope.alarm_set_message = !$scope.alarm_set_message;
+    $scope.alarma.set_message = "Alarm set up to "+$scope.alarma.alarm_hidden;
     check = $interval(Check, 1000);
   }
   tick();
